@@ -22,7 +22,7 @@ as follows, beginning with the right-most (least significant) digit:
 bucket corresponding to the digit in the current digit position.
 - For each bucket, copy all values back to the original array, start with all
 values in bucket 0, then all values in bucket 1, and so on up to bucket 9.
-- Clear the buckets for the next pass.
+- Empty the buckets for the next pass.
 
 ## Part 1 - Implement a Radix Sort
 
@@ -35,7 +35,9 @@ function as that is not applicable. An empty function implementation is
 provided in the starter code.
 
 Although not required for this assignment, you might consider using *vector*s
-for you buckets, as vectors are abstractions of dynamic arrays. You can
+for your buckets, as vectors are abstractions of dynamic arrays and easier
+to work with than ordinary arrays (the first parameter to the *sort* function,
+however, must remain as an ordinary array). You can
 declare an array of 10 vectors, with indexes 0 through 9, as follows:
 
 ```C++
@@ -43,32 +45,36 @@ std::vector<int> buckets(10);
 ```
 
 Here each of *buckets[0]*, *buckets[1]*, etc. is a vector.
-Use *vector* member function
-*push_back* to add an integer to a vector. You can clear a bucket with the
-*clear* member function.
+Use the *vector* member function
+*push_back* to add an integer to a vector. You can clear (empty)
+a bucket with the *clear* member function.
 
 Of course, other implementations are possible.
 
 Be sure to change the include file at line 20 of *sorttest4.cpp* to use you
-*radix.h* header file. The code given uses *quick.h*.
+*radix.h* header file. The starter code given uses *quick.h*.
 
-You are free to use outside resources to research this sort algorithm, but
-document any resources you used as part of your submission for part 2 of this
+You are free to use outside resources to research this algorithm, but
+document any resources you used as part of your submission in part 2 of this
 assignment.
 
 ## Part 2 - Analysis and Comparison with Quicksort
 
-Include your responses for this part in file *RESPONSES.md* in markdown
+Include your responses for this part in file *RESPONSES.md* in Markdown
 format. Include your name at the top of both *RESPONSES.md" and *radix.h*.
 
 Run some timing tests for both *Quicksort* and *Radix Sort*. (Of course
 you need to change the include file at line 20 in *sorttest4.cpp* to change
 algorithms.) Include the results of your tests when you submit this assignment.
 Be sure to use a progression of array sizes to get a good feel for how they
-compare. How do the two sorting algorithms compare?
+compare. How do the two sorting algorithms compare as the size of the
+array grows?
 
 What is the run-time complexity of this algorithm? Alghough you might find
 online resources that will address this topic, what is the run-time
 complexity when you consider that the values to be sorted are specifically
 5 digits or fewer? Do you consider it to be linear, logarithmic, N log N,
 quadratic, or something else?
+
+Remember to document any outside sources you used in researching
+this algorithm.
