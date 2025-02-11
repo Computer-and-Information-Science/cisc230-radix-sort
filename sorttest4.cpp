@@ -16,8 +16,7 @@ using namespace std;
 // Include the sort code. The file used here must define a function called
 //	"sort" that takes two parameters: an array of integers (or template type)
 //	and an integer size.
-// TODO: Change the include to "radix.h" to use your radix sort implementation.
-#include "quick.h"
+#include "radix.h"
 
 int checksum1(int a[], int n);
 int checksum2(int a[], int n);
